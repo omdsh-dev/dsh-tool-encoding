@@ -1,13 +1,32 @@
 {
-  "name": "@dsh-external/dsh-tool-encoding",
-  "version": "0.1.0",
-  "description": "DSH dsh-tool-encoding plugin",
+  "name": "@deepseek-ai/dsh-tool-encoding",
+  "description": "DSH encoding tool plugin",
+  "version": "0.0.1",
+  "private": true,
   "type": "module",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
-  "scripts": { "test": "vitest run" },
-  "devDependencies": { "vitest": "^2.0.0" },
-  "license": "MIT",
-  "engines": { "node": ">=20" },
-  "repository": { "type": "git", "url": "https://github.com/dsh-external/dsh-tool-encoding" }
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "peerDependencies": {
+    "@deepseek-ai/dsh-invariants": "*",
+    "@deepseek-ai/dsh-tools": "*",
+    "cordis": "*"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "src",
+    "cordis.patch.yml"
+  ]
 }
