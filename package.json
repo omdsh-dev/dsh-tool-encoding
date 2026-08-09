@@ -7,7 +7,6 @@
   "main": "lib/index.js",
   "types": "lib/types/index.d.ts",
   "peerDependencies": {
-    "@deepseek-ai/dsh-invariants": "*",
     "@deepseek-ai/dsh-tools": "*",
     "cordis": "*"
   },
