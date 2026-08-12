@@ -6,7 +6,7 @@
  *   - id: tool-encoding
  *     name: '@deepseek-ai/dsh-tool-encoding'
  */
-import type { Context } from 'cordis';
+import type { Context } from '@deepseek-ai/cordis';
 export declare const name = "@deepseek-ai/dsh-tool-encoding";
 export declare const inject: string[];
 export declare function apply(ctx: Context): void;
