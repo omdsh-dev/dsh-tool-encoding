@@ -77,6 +77,16 @@ ctx.tools.register(defineTool({
 - **所有 action 返回字符串**（含 `uuid`）
 - **不要对机密材料使用本工具**：tool 参数会记录进会话日志
 
+## npm rc.1 兼容（已验证）
+
+本插件已迁移到 npm rc.1 依赖线，并在 `@deepseek-ai/dsh@0.0.1-rc.1` 的隔离 consumer 中完成全链路验证：
+
+- **类型/运行时**：`@deepseek-ai/cordis@^4.0.1-rc.1` + `@deepseek-ai/dsh-tools@^0.0.1-rc.1` + `@deepseek-ai/dsh-invariants@^0.0.1-rc.1`（peer）；不再依赖 unscoped `cordis`
+- **独立构建**：`npm install`（devDependencies 自包含 typescript/vitest/@types/node）→ `npm run typecheck` → `npm test` → `npm run build` → `npm pack`
+- **消费验证**：tarball 装入 rc.1 consumer → `dsh --profile compat --dump-config` 出现本插件 row → 工具真实注册与执行通过
+- **启动方式**：`npx -p @deepseek-ai/dsh@0.0.1-rc.1 dsh web`（lib 生产模式；勿 `install -g` 全局安装）
+
+
 ## 版本适配
 
 - **适配 DSH snapshot**: `20260806T160212Z-279244acb0`（0806 迁移：profile/bundle 插件系统）
