@@ -1,5 +1,7 @@
 # dsh-tool-encoding
 
+[English](README.en.md)
+
 DSH 编码/哈希工具插件 —— UTF-8 文本的 base64/base64url/url/hex 编解码 + 哈希 + UUID。零依赖、零进程、纯函数。
 
 > 包名：`@deepseek-ai/dsh-tool-encoding`（独立 bundle，非 monorepo 集成形态）；`lib/` 产物由仓库内 `npm run build`（tsc）生成并随仓库提交。
